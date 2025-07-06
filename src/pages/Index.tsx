@@ -125,7 +125,7 @@ const Index = () => {
               {['About', 'Education', 'Skills', 'Projects', 'Experience', 'Contact'].map((item) => (
                 <button
                   key={item}
-                  onClick={() => scrollToSection(item.toLowerCase())}
+                  onClick={() => scrollToSection(item.toLowerCase() === 'education' ? 'education' : item.toLowerCase())}
                   className="glass-button px-4 py-2 rounded-xl text-sm font-medium hover:bg-primary/20 hover:text-primary hover:shadow-lg transition-all duration-300"
                 >
                   {item}
@@ -143,8 +143,9 @@ const Index = () => {
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-7xl font-bold font-poppins text-glow">
                 Hi, I'm{' '}
-                <span className="bg-gradient-primary bg-clip-text text-transparent">
-                  Alex
+                <span className="text-foreground">Alex</span>{' '}
+                <span className="bg-gradient-to-r from-primary via-purple-500 to-secondary bg-clip-text text-transparent">
+                  Johnson
                 </span>
               </h1>
               <div className="h-16 flex items-center">
@@ -237,7 +238,7 @@ const Index = () => {
       </section>
 
       {/* Education Section */}
-      <section className="py-20 px-6 bg-gradient-glass">
+      <section id="education" className="py-20 px-6 bg-gradient-glass">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 font-poppins text-glow">
             Education
@@ -291,17 +292,17 @@ const Index = () => {
           <Card className="glass-card rounded-2xl hover-lift mb-12">
             <CardContent className="p-8">
               <div className="grid lg:grid-cols-2 gap-12">
-                {/* Technical Skills */}
+                 {/* Technical Skills */}
                 <div>
-                  <div className="flex items-center mb-6">
-                    <Code className="w-6 h-6 text-primary mr-3" />
-                    <h3 className="text-2xl font-semibold">Technical Skills</h3>
+                  <div className="flex items-center mb-6 group cursor-pointer">
+                    <Code className="w-6 h-6 text-primary mr-3 group-hover:text-white transition-colors duration-300" />
+                    <h3 className="text-2xl font-semibold bg-primary/10 hover:bg-primary hover:text-white px-6 py-3 rounded-full border-2 border-primary/20 hover:border-primary transition-all duration-300 cursor-pointer">Technical Skills</h3>
                   </div>
                   <div className="flex flex-wrap gap-3">
                     {['Python', 'JavaScript', 'React', 'Node.js', 'MySQL', 'MongoDB', 'Power BI', 'Tableau', 'Git', 'Docker', 'AWS', 'Machine Learning'].map((skill) => (
                       <Badge 
                         key={skill} 
-                        className="bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 hover:scale-105 transition-all duration-300 cursor-pointer px-4 py-2 text-sm font-medium"
+                        className="bg-primary/10 text-primary border-primary/20 hover:bg-primary hover:text-white hover:scale-105 transition-all duration-300 cursor-pointer px-4 py-2 text-sm font-medium rounded-full"
                       >
                         {skill}
                       </Badge>
@@ -311,15 +312,15 @@ const Index = () => {
 
                 {/* Soft Skills */}
                 <div>
-                  <div className="flex items-center mb-6">
-                    <Users className="w-6 h-6 text-primary mr-3" />
-                    <h3 className="text-2xl font-semibold">Soft Skills</h3>
+                  <div className="flex items-center mb-6 group cursor-pointer">
+                    <Users className="w-6 h-6 text-primary mr-3 group-hover:text-white transition-colors duration-300" />
+                    <h3 className="text-2xl font-semibold bg-primary/10 hover:bg-primary hover:text-white px-6 py-3 rounded-full border-2 border-primary/20 hover:border-primary transition-all duration-300 cursor-pointer">Soft Skills</h3>
                   </div>
                   <div className="flex flex-wrap gap-3">
                     {['Leadership', 'Teamwork', 'Problem Solving', 'Communication', 'Project Management', 'Critical Thinking'].map((skill) => (
                       <Badge 
                         key={skill} 
-                        className="bg-secondary/20 text-secondary-foreground border-secondary/30 hover:bg-secondary/30 hover:scale-105 transition-all duration-300 cursor-pointer px-4 py-2 text-sm font-medium"
+                        className="bg-primary/10 text-primary border-primary/20 hover:bg-primary hover:text-white hover:scale-105 transition-all duration-300 cursor-pointer px-4 py-2 text-sm font-medium rounded-full"
                       >
                         {skill}
                       </Badge>
@@ -423,9 +424,10 @@ const Index = () => {
                           size="sm" 
                           variant="outline"
                           onClick={() => window.open(exp.certificateLink, '_blank')}
-                          className="hover:bg-primary/10 hover:text-primary hover:border-primary/50 transition-all duration-300"
+                          className="relative overflow-hidden border-2 border-primary/30 bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/20 hover:to-secondary/20 hover:border-primary hover:shadow-lg hover:scale-105 transition-all duration-300 group"
                         >
-                          Certificate
+                          <span className="relative z-10 font-medium">Certificate</span>
+                          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></div>
                         </Button>
                       </div>
                     </div>
@@ -461,9 +463,10 @@ const Index = () => {
                       size="sm" 
                       variant="outline"
                       onClick={() => window.open(cert.link, '_blank')}
-                      className="hover:bg-primary/10 hover:text-primary hover:border-primary/50 transition-all duration-300"
+                      className="relative overflow-hidden border-2 border-primary/30 bg-gradient-to-r from-primary/5 to-secondary/5 hover:from-primary/20 hover:to-secondary/20 hover:border-primary hover:shadow-lg hover:scale-105 transition-all duration-300 group"
                     >
-                      View
+                      <span className="relative z-10 font-medium">View</span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></div>
                     </Button>
                   </div>
                 </CardContent>
@@ -474,59 +477,86 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-6">
+      <section id="contact" className="py-20 px-6 relative overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 -z-10">
+          <div className="floating absolute top-10 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl"></div>
+          <div className="floating absolute bottom-20 right-20 w-32 h-32 bg-secondary/10 rounded-full blur-2xl" style={{animationDelay: '-1s'}}></div>
+          <div className="floating absolute top-1/2 left-1/4 w-16 h-16 bg-accent/10 rounded-full blur-lg" style={{animationDelay: '-2s'}}></div>
+        </div>
+        
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-4 font-poppins text-glow">
-            Let's Build Something Together!
-          </h2>
-          <p className="text-center text-muted-foreground mb-12">
-            I'm always open to discussing new opportunities and interesting projects.
-          </p>
+          <div className="text-center mb-12 animate-fade-in-up">
+            <h2 className="text-4xl font-bold mb-4 font-poppins text-glow animate-pulse-glow">
+              Let's Build Something Together!
+            </h2>
+            <p className="text-muted-foreground animate-slide-in-left">
+              I'm always open to discussing new opportunities and interesting projects.
+            </p>
+          </div>
           
           <div className="grid lg:grid-cols-2 gap-12">
-            <div className="space-y-6">
-              <Card className="glass-card rounded-2xl">
+            <div className="space-y-6 animate-slide-in-left">
+              <Card className="glass-card rounded-2xl hover-lift transform hover:scale-[1.02] transition-all duration-500">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-6">Get In Touch</h3>
+                  <h3 className="text-xl font-semibold mb-6 bg-gradient-primary bg-clip-text text-transparent">Get In Touch</h3>
                   <div className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <Mail className="w-5 h-5 text-primary" />
-                      <span>alex.johnson@email.com</span>
+                    <div className="flex items-center space-x-3 group hover:translate-x-2 transition-transform duration-300">
+                      <div className="p-2 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
+                        <Mail className="w-5 h-5 text-primary" />
+                      </div>
+                      <span className="group-hover:text-primary transition-colors duration-300">alex.johnson@email.com</span>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <Github className="w-5 h-5 text-primary" />
-                      <span>github.com/alexjohnson</span>
+                    <div className="flex items-center space-x-3 group hover:translate-x-2 transition-transform duration-300" style={{animationDelay: '0.1s'}}>
+                      <div className="p-2 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
+                        <Github className="w-5 h-5 text-primary" />
+                      </div>
+                      <span className="group-hover:text-primary transition-colors duration-300">github.com/alexjohnson</span>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <Users className="w-5 h-5 text-primary" />
-                      <span>linkedin.com/in/alexjohnson</span>
+                    <div className="flex items-center space-x-3 group hover:translate-x-2 transition-transform duration-300" style={{animationDelay: '0.2s'}}>
+                      <div className="p-2 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
+                        <Users className="w-5 h-5 text-primary" />
+                      </div>
+                      <span className="group-hover:text-primary transition-colors duration-300">linkedin.com/in/alexjohnson</span>
                     </div>
                   </div>
                 </CardContent>
               </Card>
             </div>
 
-            <Card className="glass-card rounded-2xl">
+            <Card className="glass-card rounded-2xl hover-lift transform hover:scale-[1.02] transition-all duration-500 animate-fade-in-up" style={{animationDelay: '0.3s'}}>
               <CardContent className="p-6">
                 <form onSubmit={handleContactSubmit} className="space-y-4">
-                  <Input 
-                    placeholder="Your Name" 
-                    className="glass-button border-white/20"
-                    required 
-                  />
-                  <Input 
-                    type="email" 
-                    placeholder="Your Email" 
-                    className="glass-button border-white/20"
-                    required 
-                  />
-                  <Textarea 
-                    placeholder="Your Message" 
-                    className="glass-button border-white/20 min-h-32"
-                    required 
-                  />
-                  <Button type="submit" className="w-full glass-button py-3">
-                    Send Message
+                  <div className="relative group">
+                    <Input 
+                      placeholder="Your Name" 
+                      className="glass-button border-white/20 focus:border-primary/50 focus:shadow-glow transition-all duration-300 group-hover:border-primary/30"
+                      required 
+                    />
+                    <div className="absolute inset-0 rounded-md bg-gradient-to-r from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                  </div>
+                  <div className="relative group">
+                    <Input 
+                      type="email" 
+                      placeholder="Your Email" 
+                      className="glass-button border-white/20 focus:border-primary/50 focus:shadow-glow transition-all duration-300 group-hover:border-primary/30"
+                      required 
+                    />
+                    <div className="absolute inset-0 rounded-md bg-gradient-to-r from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                  </div>
+                  <div className="relative group">
+                    <Textarea 
+                      placeholder="Your Message" 
+                      className="glass-button border-white/20 min-h-32 focus:border-primary/50 focus:shadow-glow transition-all duration-300 group-hover:border-primary/30"
+                      required 
+                    />
+                    <div className="absolute inset-0 rounded-md bg-gradient-to-r from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                  </div>
+                  <Button 
+                    type="submit" 
+                    className="w-full glass-button py-3 bg-gradient-primary text-primary-foreground hover:shadow-glow hover:scale-105 hover:-translate-y-1 transition-all duration-300 animate-pulse-glow"
+                  >
+                    <span className="relative z-10">Send Message</span>
                   </Button>
                 </form>
               </CardContent>
