@@ -21,10 +21,10 @@
     --popover: 255 100% 99%;
     --popover-foreground: 255 15% 15%;
 
-    /* Lavender Primary System */
-    --primary: 264 44% 70%;
+    /* Blue Primary System */
+    --primary: 217 91% 60%;
     --primary-foreground: 255 100% 98%;
-    --primary-glow: 264 44% 85%;
+    --primary-glow: 217 91% 75%;
 
     /* Light Teal Secondary System */
     --secondary: 180 42% 78%;
@@ -55,10 +55,10 @@
     --radius-xl: 2rem;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(264 44% 70%) 0%, hsl(180 42% 78%) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(180 42% 78%) 0%, hsl(340 82% 85%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(248 100% 98%) 0%, hsl(264 44% 95%) 50%, hsl(180 42% 95%) 100%);
-    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(217 91% 75%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(217 91% 75%) 0%, hsl(180 42% 78%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(248 100% 98%) 0%, hsl(217 91% 95%) 50%, hsl(217 91% 98%) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(54, 162, 235, 0.1) 0%, rgba(54, 162, 235, 0.05) 100%);
 
     /* Shadows & Glows */
     --shadow-soft: 0 4px 20px -4px hsl(255 15% 15% / 0.1);

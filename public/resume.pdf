@@ -1,0 +1,103 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Contents 4 0 R
+/Resources <<
+/Font <<
+/F1 5 0 R
+>>
+>>
+>>
+endobj
+
+4 0 obj
+<<
+/Length 500
+>>
+stream
+BT
+/F1 24 Tf
+50 750 Td
+(Alex Johnson) Tj
+0 -30 Td
+/F1 16 Tf
+(Computer Science Student | AI Enthusiast) Tj
+0 -40 Td
+/F1 12 Tf
+(Stanford University | Expected Graduation: May 2025) Tj
+0 -20 Td
+(Email: alex.johnson@email.com) Tj
+0 -20 Td
+(GitHub: github.com/alexjohnson) Tj
+0 -40 Td
+/F1 14 Tf
+(EDUCATION) Tj
+0 -20 Td
+/F1 12 Tf
+(Bachelor of Science in Computer Science) Tj
+0 -15 Td
+(Stanford University, GPA: 3.8/4.0) Tj
+0 -40 Td
+/F1 14 Tf
+(TECHNICAL SKILLS) Tj
+0 -20 Td
+/F1 12 Tf
+(Programming: Python, JavaScript, React, Node.js) Tj
+0 -15 Td
+(Tools: AWS, Git, Docker, MongoDB, MySQL) Tj
+0 -15 Td
+(AI/ML: TensorFlow, Machine Learning, Data Analysis) Tj
+0 -40 Td
+/F1 14 Tf
+(EXPERIENCE) Tj
+0 -20 Td
+/F1 12 Tf
+(Frontend Developer Intern - TechStart Solutions) Tj
+0 -15 Td
+(Research Assistant - University AI Lab) Tj
+ET
+endstream
+endobj
+
+5 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+
+xref
+0 6
+0000000000 65535 f 
+0000000010 00000 n 
+0000000053 00000 n 
+0000000100 00000 n 
+0000000234 00000 n 
+0000000787 00000 n 
+trailer
+<<
+/Size 6
+/Root 1 0 R
+>>
+startxref
+846
+%%EOF

@@ -89,10 +89,10 @@ const Index = () => {
   ];
 
   const certifications = [
-    { name: 'AWS Solutions Architect', provider: 'Amazon Web Services', year: '2024' },
-    { name: 'Machine Learning Specialization', provider: 'Coursera (Stanford)', year: '2023' },
-    { name: 'Full Stack Web Development', provider: 'freeCodeCamp', year: '2023' },
-    { name: 'Google UX Design Certificate', provider: 'Google Career Certificates', year: '2024' }
+    { name: 'AWS Solutions Architect', provider: 'Amazon Web Services', year: '2024', link: 'https://aws.amazon.com/certification/certified-solutions-architect-associate/' },
+    { name: 'Machine Learning Specialization', provider: 'Coursera (Stanford)', year: '2023', link: 'https://www.coursera.org/specializations/machine-learning' },
+    { name: 'Full Stack Web Development', provider: 'freeCodeCamp', year: '2023', link: 'https://www.freecodecamp.org/certification/alexjohnson/full-stack' },
+    { name: 'Google UX Design Certificate', provider: 'Google Career Certificates', year: '2024', link: 'https://www.coursera.org/professional-certificates/google-ux-design' }
   ];
 
   const experiences = [
@@ -100,13 +100,15 @@ const Index = () => {
       role: 'Frontend Developer Intern',
       company: 'TechStart Solutions',
       duration: 'Jun 2024 - Aug 2024',
-      description: 'Developed responsive web applications using React and TypeScript, collaborated with design team to implement user-centered interfaces.'
+      description: 'Developed responsive web applications using React and TypeScript, collaborated with design team to implement user-centered interfaces.',
+      certificateLink: 'https://techstart.com/certificates/frontend-intern-alex-johnson'
     },
     {
       role: 'Research Assistant',
       company: 'University AI Lab',
       duration: 'Jan 2024 - Present',
-      description: 'Working on natural language processing research, published 2 papers on sentiment analysis applications.'
+      description: 'Working on natural language processing research, published 2 papers on sentiment analysis applications.',
+      certificateLink: 'https://university.edu/certificates/research-assistant-alex-johnson'
     }
   ];
 
@@ -120,11 +122,11 @@ const Index = () => {
               Alex Johnson
             </div>
             <div className="hidden md:flex space-x-6">
-              {['About', 'Skills', 'Projects', 'Experience', 'Contact'].map((item) => (
+              {['About', 'Education', 'Skills', 'Projects', 'Experience', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className="glass-button px-4 py-2 rounded-xl text-sm font-medium"
+                  className="glass-button px-4 py-2 rounded-xl text-sm font-medium hover:bg-primary/20 hover:text-primary hover:shadow-lg transition-all duration-300"
                 >
                   {item}
                 </button>
@@ -158,15 +160,20 @@ const Index = () => {
             </div>
             <div className="flex flex-wrap gap-4">
               <Button 
-                onClick={() => scrollToSection('projects')}
-                className="glass-button px-8 py-3 text-lg font-medium rounded-2xl"
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/resume.pdf';
+                  link.download = 'Alex_Johnson_Resume.pdf';
+                  link.click();
+                }}
+                className="bg-gradient-primary text-primary-foreground px-8 py-3 text-lg font-medium rounded-2xl hover:shadow-glow hover:scale-105 transition-all duration-300"
               >
-                Explore My Work
+                Download Resume
               </Button>
               <Button 
                 variant="outline" 
                 onClick={() => scrollToSection('contact')}
-                className="glass-button px-8 py-3 text-lg font-medium rounded-2xl"
+                className="glass-button px-8 py-3 text-lg font-medium rounded-2xl hover:bg-primary/10 hover:text-primary hover:border-primary/50 transition-all duration-300"
               >
                 Let's Connect
               </Button>
@@ -279,6 +286,51 @@ const Index = () => {
           <h2 className="text-4xl font-bold text-center mb-12 font-poppins text-glow">
             Skills & Expertise
           </h2>
+          
+          {/* New Skills Structure based on uploaded image */}
+          <Card className="glass-card rounded-2xl hover-lift mb-12">
+            <CardContent className="p-8">
+              <div className="grid lg:grid-cols-2 gap-12">
+                {/* Technical Skills */}
+                <div>
+                  <div className="flex items-center mb-6">
+                    <Code className="w-6 h-6 text-primary mr-3" />
+                    <h3 className="text-2xl font-semibold">Technical Skills</h3>
+                  </div>
+                  <div className="flex flex-wrap gap-3">
+                    {['Python', 'JavaScript', 'React', 'Node.js', 'MySQL', 'MongoDB', 'Power BI', 'Tableau', 'Git', 'Docker', 'AWS', 'Machine Learning'].map((skill) => (
+                      <Badge 
+                        key={skill} 
+                        className="bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 hover:scale-105 transition-all duration-300 cursor-pointer px-4 py-2 text-sm font-medium"
+                      >
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Soft Skills */}
+                <div>
+                  <div className="flex items-center mb-6">
+                    <Users className="w-6 h-6 text-primary mr-3" />
+                    <h3 className="text-2xl font-semibold">Soft Skills</h3>
+                  </div>
+                  <div className="flex flex-wrap gap-3">
+                    {['Leadership', 'Teamwork', 'Problem Solving', 'Communication', 'Project Management', 'Critical Thinking'].map((skill) => (
+                      <Badge 
+                        key={skill} 
+                        className="bg-secondary/20 text-secondary-foreground border-secondary/30 hover:bg-secondary/30 hover:scale-105 transition-all duration-300 cursor-pointer px-4 py-2 text-sm font-medium"
+                      >
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Original Progress Bars */}
           <div className="grid md:grid-cols-3 gap-8">
             {['Programming', 'Tools', 'Soft Skills'].map((category) => (
               <Card key={category} className="glass-card rounded-2xl hover-lift">
@@ -365,7 +417,17 @@ const Index = () => {
                         <h3 className="text-xl font-semibold">{exp.role}</h3>
                         <p className="text-primary font-medium">{exp.company}</p>
                       </div>
-                      <Badge variant="outline">{exp.duration}</Badge>
+                      <div className="flex items-center gap-3">
+                        <Badge variant="outline">{exp.duration}</Badge>
+                        <Button 
+                          size="sm" 
+                          variant="outline"
+                          onClick={() => window.open(exp.certificateLink, '_blank')}
+                          className="hover:bg-primary/10 hover:text-primary hover:border-primary/50 transition-all duration-300"
+                        >
+                          Certificate
+                        </Button>
+                      </div>
                     </div>
                     <p className="text-sm text-muted-foreground">{exp.description}</p>
                   </CardContent>
@@ -393,7 +455,17 @@ const Index = () => {
                     <h3 className="font-semibold">{cert.name}</h3>
                     <p className="text-sm text-muted-foreground">{cert.provider}</p>
                   </div>
-                  <Badge variant="secondary">{cert.year}</Badge>
+                  <div className="flex items-center gap-3">
+                    <Badge variant="secondary">{cert.year}</Badge>
+                    <Button 
+                      size="sm" 
+                      variant="outline"
+                      onClick={() => window.open(cert.link, '_blank')}
+                      className="hover:bg-primary/10 hover:text-primary hover:border-primary/50 transition-all duration-300"
+                    >
+                      View
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             ))}
