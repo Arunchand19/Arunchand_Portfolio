@@ -332,4 +332,48 @@
     scroll-snap-align: start;
     scroll-snap-stop: always;
   }
+
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+
+  @keyframes cert-pop {
+    0% { opacity: 0; transform: translateY(40px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .cert-card-animate {
+    animation: cert-pop 0.5s ease-out both;
+  }
+
+  .cert-shimmer {
+    background: linear-gradient(90deg, transparent 0%, hsl(var(--primary) / 0.15) 50%, transparent 100%);
+    background-size: 200% auto;
+    animation: shimmer 2.5s linear infinite;
+  }
+
+  @keyframes skill-bar-fill {
+    from { width: 0%; }
+    to   { width: var(--skill-level); }
+  }
+
+  @keyframes skill-pop {
+    0%   { opacity: 0; transform: translateY(20px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0)   scale(1);    }
+  }
+
+  @keyframes badge-float {
+    0%, 100% { transform: translateY(0px);  }
+    50%       { transform: translateY(-4px); }
+  }
+
+  .skill-badge-animate {
+    animation: skill-pop 0.4s ease-out both;
+  }
+
+  .skill-bar-animated {
+    animation: skill-bar-fill 1.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+    width: var(--skill-level);
+  }
 }
