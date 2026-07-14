@@ -335,7 +335,7 @@ const Index = () => {
               Arunchand Mallarapu
             </div>
             <div className="hidden md:flex items-center space-x-6">
-              {['About', 'Education', 'Skills', 'Projects', 'Experience', 'Achievements', 'Certifications', 'Contact'].map((item) => (
+              {['About', 'Education', 'Skills', 'Achievements', 'Projects', 'Experience', 'Certifications', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
@@ -739,6 +739,239 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Achievements Section */}
+      <section id="achievements" className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-4 font-poppins text-glow">
+            Achievements
+          </h2>
+          <p className="text-center text-muted-foreground mb-14 text-base">Milestones &amp; recognitions that shaped my journey</p>
+
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'Awarded 2nd Prize at Sudhee 2026 Technical Project Expo, CBIT Hyderabad',
+                desc: 'DeepFit AI is an AI-based platform that uses camera pose detection to analyze exercises, track performance, and provide fitness scoring and rankings.',
+                icon: '🏆',
+                year: '2026',
+                tag: 'Project Expo',
+                link: 'https://drive.google.com/file/d/1RgjSYBuj7YdiIEt57_BmEnjnOqj9eBBv/view?usp=sharing',
+                image: cbitImage,
+                palette: {
+                  grad: 'from-yellow-400 via-orange-400 to-red-400',
+                  bar:  'from-yellow-400 to-orange-400',
+                  bg:   'from-yellow-50 to-orange-50',
+                  badge:'bg-orange-100 text-orange-700 border-orange-300',
+                  btn:  'from-orange-500 to-red-400',
+                  ring: 'ring-orange-300',
+                  frame:'border-orange-400',
+                },
+              },
+              {
+                title: 'AISEHack 2026 - IIIT Hyderabad Finalist',
+                image: iiithImage,
+                desc: 'Participated in AISE Hack, a 48-hour hackathon, where we developed a flood detection system using AI to identify and monitor flood-prone areas.The solution focused on real-time data analysis to enable early warnings and improve disaster response.',
+                icon: '🤖',
+                year: '2026',
+                tag: 'Hackathon',
+                link: 'https://drive.google.com/file/d/1X6LOex7OIeHZ7t2IpRHzI_fBn_CbpybA/view?usp=sharing',
+                palette: {
+                  grad: 'from-blue-500 via-cyan-400 to-teal-400',
+                  bar:  'from-blue-500 to-cyan-400',
+                  bg:   'from-blue-50 to-cyan-50',
+                  badge:'bg-blue-100 text-blue-700 border-blue-300',
+                  btn:  'from-blue-500 to-cyan-400',
+                  ring: 'ring-blue-300',
+                  frame:'border-blue-400',
+                },
+              },
+              {
+                title: 'Smart India Hackathon 2025 - Semi-Finalist',
+                image: sihImage,
+                desc: 'Successfully cleared internal and department level of college rounds of Smart India Hackathon (SIH) 2025, securing a position as a semi-finalist.Demonstrated strong problem-solving and innovation skills while competing among top teams.',
+                icon: '💻',
+                year: '2025',
+                tag: 'Hackathon',
+                link: 'https://deepfitai-bwj8.onrender.com/',
+                palette: {
+                  grad: 'from-violet-500 via-purple-400 to-pink-400',
+                  bar:  'from-violet-500 to-purple-400',
+                  bg:   'from-violet-50 to-purple-50',
+                  badge:'bg-violet-100 text-violet-700 border-violet-300',
+                  btn:  'from-violet-500 to-purple-400',
+                  ring: 'ring-violet-300',
+                  frame:'border-violet-400',
+                },
+              },
+              {
+                title: 'NPTEL - Programming In Java',
+                image: nptelImage,
+                desc: 'Secured 94 Percentile (Gold Medal) in exam and successfully completed the NPTEL certification on Programming In Java, demonstrating strong foundational knowledge in programming logic, algorithms, and Java Language.',
+                icon: '📚🏆',
+                year: '2025',
+                tag: 'Gold Merit Certification',
+                link: 'https://drive.google.com/file/d/1b_5haS62nUWCfLGw8znzKXX9TL7BgxS9/view?usp=sharing',
+                palette: {
+                  grad: 'from-lime-500 via-green-400 to-emerald-400',
+                  bar:  'from-lime-500 to-emerald-400',
+                  bg:   'from-lime-50 to-emerald-50',
+                  badge:'bg-lime-100 text-lime-700 border-lime-300',
+                  btn:  'from-lime-500 to-emerald-400',
+                  ring: 'ring-lime-300',
+                  frame:'border-lime-400',
+                },
+              },
+              {
+                title: 'Naukri Campus Young Turks 2025 - secured 97.94 percentile in coding round',
+                image: naukriImage,
+                desc: 'Achieved a 97.94 percentile in the coding round of Naukri Campus Young Turks 2025, demonstrating strong problem-solving and programming skills. Performed competitively among a large pool of participants in a high-standard technical assessment.',
+                icon: '🌍',
+                year: '2025',
+                tag: 'Coding Challenge',
+                link: 'https://drive.google.com/file/d/1QdrsI8Pw4Ah0_eq1Uwv_dOiBF9Pmy64U/view',
+                palette: {
+                  grad: 'from-amber-500 via-yellow-400 to-lime-400',
+                  bar:  'from-amber-500 to-yellow-400',
+                  bg:   'from-amber-50 to-yellow-50',
+                  badge:'bg-amber-100 text-amber-700 border-amber-300',
+                  btn:  'from-amber-500 to-yellow-500',
+                  ring: 'ring-amber-300',
+                  frame:'border-amber-400',
+                },
+              },
+              {
+                title: '🏆 HackerRank National Coding Hackathon - 3rd Place Winner',
+                image: '/HackerRank.png',
+                desc: 'Secured 3rd Place and received a ₹3,000 cash prize in the HackerRank National Coding Hackathon, a national-level online coding competition that assessed competitive programming, algorithmic thinking, data structures, and problem-solving skills through challenging coding challenges under time constraints.',
+                icon: '🏆',
+                year: '2026',
+                tag: 'Competitive Coding',
+                palette: {
+                  grad: 'from-emerald-500 via-teal-400 to-green-400',
+                  bar:  'from-emerald-500 to-teal-400',
+                  bg:   'from-emerald-50 to-teal-50',
+                  badge:'bg-emerald-100 text-emerald-700 border-emerald-300',
+                  btn:  'from-emerald-500 to-teal-400',
+                  ring: 'ring-emerald-300',
+                  frame:'border-emerald-400',
+                },
+              },
+              {
+                title: 'Providence Leap Ideathon - Qualified to Stage 2',
+                image: proImage,
+                desc: 'Qualified to Stage 2 of the Providence Leap Ideathon, presenting a tech-driven healthcare idea that advanced through competitive evaluation rounds.',
+                icon: '💡',
+                year: '2024',
+                tag: 'Ideathon',
+                link: 'https://drive.google.com/file/d/1vpqmX1F0kuvj6FKA1FV813tet2GZIuLn/view?usp=sharing',
+                palette: {
+                  grad: 'from-rose-500 via-pink-400 to-fuchsia-400',
+                  bar:  'from-rose-500 to-pink-400',
+                  bg:   'from-rose-50 to-pink-50',
+                  badge:'bg-rose-100 text-rose-700 border-rose-300',
+                  btn:  'from-rose-500 to-pink-400',
+                  ring: 'ring-rose-300',
+                  frame:'border-rose-400',
+                },
+              },
+              {
+                title: 'HackVega - National Coding Hackathon',
+                image: hackImage,
+                desc: 'Competed in the HackVega national coding hackathon, building a full-stack solution under time pressure and earning recognition among top participants across the country.',
+                icon: '🚀',
+                year: '2025',
+                tag: 'Hackathon',
+                link: 'https://drive.google.com/file/d/1FXMwpg3BxJ--kfkxFvz9D5xirxYnakOj/view?usp=sharing',
+                palette: {
+                  grad: 'from-sky-500 via-blue-400 to-indigo-400',
+                  bar:  'from-sky-500 to-indigo-400',
+                  bg:   'from-sky-50 to-indigo-50',
+                  badge:'bg-sky-100 text-sky-700 border-sky-300',
+                  btn:  'from-sky-500 to-indigo-400',
+                  ring: 'ring-sky-300',
+                  frame:'border-sky-400',
+                },
+              },
+              {
+                title: 'CodeClash — Battle of Logic & Code (Finalist)',
+                image: codeImage,
+                desc: 'Reached the finals of CodeClash organised by Lets Code Community on Unstop, competing against hundreds of coders in logic and algorithmic challenges.',
+                icon: '⚔️',
+                year: '2025',
+                tag: 'Competitive Coding',
+                link: 'https://drive.google.com/file/d/174oDu45M5RSKyoxECnWL47Et2jjKKtiQ/view?usp=drivesdk',
+                palette: {
+                  grad: 'from-emerald-500 via-teal-400 to-green-400',
+                  bar:  'from-emerald-500 to-teal-400',
+                  bg:   'from-emerald-50 to-teal-50',
+                  badge:'bg-emerald-100 text-emerald-700 border-emerald-300',
+                  btn:  'from-emerald-500 to-teal-400',
+                  ring: 'ring-emerald-300',
+                  frame:'border-emerald-400',
+                },
+              },
+              
+              
+            ].map((ach, i) => (
+              <div
+                key={i}
+                className="cert-card-animate group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 border border-white/30"
+                style={{ animationDelay: `${i * 0.1}s` }}
+              >
+                {/* Gradient top bar */}
+                <div className={`h-2 w-full bg-gradient-to-r ${ach.palette.bar}`} />
+
+                {/* Card body */}
+                <div className={`bg-gradient-to-br ${ach.palette.bg} p-6 flex flex-col gap-5`}>
+
+                  {/* Photo frame */}
+                  <div className={`relative w-full h-44 rounded-2xl border-4 ${ach.palette.frame} bg-white/60 backdrop-blur-sm flex items-center justify-center overflow-hidden shadow-inner`}>
+                    <div className={`absolute inset-0 bg-gradient-to-br ${ach.palette.grad} opacity-10`} />
+                    {ach.image ? (
+                      <img
+                        src={ach.image}
+                        alt={ach.title}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                      />
+                    ) : (
+                      <div className="flex flex-col items-center gap-2 z-10">
+                        <span className="text-6xl drop-shadow-lg">{ach.icon}</span>
+                        <span className="text-xs font-medium text-gray-400 tracking-widest uppercase">Photo</span>
+                      </div>
+                    )}
+                    {/* Corner accents */}
+                    <span className={`absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 ${ach.palette.frame} rounded-tl-md`} />
+                    <span className={`absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 ${ach.palette.frame} rounded-tr-md`} />
+                    <span className={`absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 ${ach.palette.frame} rounded-bl-md`} />
+                    <span className={`absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 ${ach.palette.frame} rounded-br-md`} />
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex flex-col gap-3">
+                    <div className="flex items-start justify-between gap-2">
+                      <h3 className="font-bold text-base leading-snug text-gray-800 group-hover:text-gray-900 transition-colors">{ach.title}</h3>
+                      <Badge className={`${ach.palette.badge} border text-xs px-2 py-0.5 rounded-full flex-shrink-0`}>{ach.year}</Badge>
+                    </div>
+                    <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-full bg-gradient-to-r ${ach.palette.grad} text-white w-fit shadow-sm`}>{ach.tag}</span>
+                    <p className="text-sm text-gray-600 leading-relaxed">{ach.desc}</p>
+                  </div>
+
+                  {/* Button */}
+                  {ach.link && (
+                    <Button
+                      onClick={() => window.open(ach.link, '_blank')}
+                      className={`w-full bg-gradient-to-r ${ach.palette.btn} text-white font-semibold rounded-xl py-2.5 hover:shadow-lg hover:scale-105 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2`}
+                    >
+                      View Certificate <span className="text-lg leading-none">↗</span>
+                    </Button>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Projects Section */}
       <section id="projects" className="py-20 px-6 bg-gradient-glass">
         <div className="max-w-7xl mx-auto">
@@ -879,221 +1112,6 @@ const Index = () => {
                   </div>
                 </div>
               </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      
-
-      {/* Achievements Section */}
-      <section id="achievements" className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-4 font-poppins text-glow">
-            Achievements
-          </h2>
-          <p className="text-center text-muted-foreground mb-14 text-base">Milestones &amp; recognitions that shaped my journey</p>
-
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Awarded 2nd Prize at Sudhee 2026 Technical Project Expo, CBIT Hyderabad',
-                desc: 'DeepFit AI is an AI-based platform that uses camera pose detection to analyze exercises, track performance, and provide fitness scoring and rankings.',
-                icon: '🏆',
-                year: '2026',
-                tag: 'Project Expo',
-                link: 'https://drive.google.com/file/d/1RgjSYBuj7YdiIEt57_BmEnjnOqj9eBBv/view?usp=sharing',
-                image: cbitImage,
-                palette: {
-                  grad: 'from-yellow-400 via-orange-400 to-red-400',
-                  bar:  'from-yellow-400 to-orange-400',
-                  bg:   'from-yellow-50 to-orange-50',
-                  badge:'bg-orange-100 text-orange-700 border-orange-300',
-                  btn:  'from-orange-500 to-red-400',
-                  ring: 'ring-orange-300',
-                  frame:'border-orange-400',
-                },
-              },
-              {
-                title: 'AISEHack 2026 - IIIT Hyderabad Finalist',
-                image: iiithImage,
-                desc: 'Participated in AISE Hack, a 48-hour hackathon, where we developed a flood detection system using AI to identify and monitor flood-prone areas.The solution focused on real-time data analysis to enable early warnings and improve disaster response.',
-                icon: '🤖',
-                year: '2026',
-                tag: 'Hackathon',
-                link: 'https://drive.google.com/file/d/1X6LOex7OIeHZ7t2IpRHzI_fBn_CbpybA/view?usp=sharing',
-                palette: {
-                  grad: 'from-blue-500 via-cyan-400 to-teal-400',
-                  bar:  'from-blue-500 to-cyan-400',
-                  bg:   'from-blue-50 to-cyan-50',
-                  badge:'bg-blue-100 text-blue-700 border-blue-300',
-                  btn:  'from-blue-500 to-cyan-400',
-                  ring: 'ring-blue-300',
-                  frame:'border-blue-400',
-                },
-              },
-              {
-                title: 'Smart India Hackathon 2025 - Semi Finalist',
-                image: sihImage,
-                desc: 'Successfully cleared internal and department level of college rounds of Smart India Hackathon (SIH) 2025, securing a position as a semi-finalist.Demonstrated strong problem-solving and innovation skills while competing among top teams.',
-                icon: '💻',
-                year: '2025',
-                tag: 'Hackathon',
-                link: 'https://deepfitai-bwj8.onrender.com/',
-                palette: {
-                  grad: 'from-violet-500 via-purple-400 to-pink-400',
-                  bar:  'from-violet-500 to-purple-400',
-                  bg:   'from-violet-50 to-purple-50',
-                  badge:'bg-violet-100 text-violet-700 border-violet-300',
-                  btn:  'from-violet-500 to-purple-400',
-                  ring: 'ring-violet-300',
-                  frame:'border-violet-400',
-                },
-              },
-              {
-                title: 'NPTEL - Programming In Java',
-                image: nptelImage,
-                desc: 'Secured 94 Percentile (Gold Medal) in exam and successfully completed the NPTEL certification on Programming In Java, demonstrating strong foundational knowledge in programming logic, algorithms, and Java Language.',
-                icon: '📚🏆',
-                year: '2025',
-                tag: 'Gold Merit Certification',
-                link: 'https://drive.google.com/file/d/1b_5haS62nUWCfLGw8znzKXX9TL7BgxS9/view?usp=sharing',
-                palette: {
-                  grad: 'from-lime-500 via-green-400 to-emerald-400',
-                  bar:  'from-lime-500 to-emerald-400',
-                  bg:   'from-lime-50 to-emerald-50',
-                  badge:'bg-lime-100 text-lime-700 border-lime-300',
-                  btn:  'from-lime-500 to-emerald-400',
-                  ring: 'ring-lime-300',
-                  frame:'border-lime-400',
-                },
-              },
-              {
-                title: 'Naukri Campus Young Turks 2025 - secured 97.94 percentile in coding round',
-                image: naukriImage,
-                desc: 'Achieved a 97.94 percentile in the coding round of Naukri Campus Young Turks 2025, demonstrating strong problem-solving and programming skills. Performed competitively among a large pool of participants in a high-standard technical assessment.',
-                icon: '🌍',
-                year: '2025',
-                tag: 'Coding Challenge',
-                link: 'https://drive.google.com/file/d/1QdrsI8Pw4Ah0_eq1Uwv_dOiBF9Pmy64U/view',
-                palette: {
-                  grad: 'from-amber-500 via-yellow-400 to-lime-400',
-                  bar:  'from-amber-500 to-yellow-400',
-                  bg:   'from-amber-50 to-yellow-50',
-                  badge:'bg-amber-100 text-amber-700 border-amber-300',
-                  btn:  'from-amber-500 to-yellow-500',
-                  ring: 'ring-amber-300',
-                  frame:'border-amber-400',
-                },
-              },
-              {
-                title: 'CodeClash — Battle of Logic & Code (Finalist)',
-                image: codeImage,
-                desc: 'Reached the finals of CodeClash organised by Lets Code Community on Unstop, competing against hundreds of coders in logic and algorithmic challenges.',
-                icon: '⚔️',
-                year: '2025',
-                tag: 'Competitive Coding',
-                link: 'https://drive.google.com/file/d/174oDu45M5RSKyoxECnWL47Et2jjKKtiQ/view?usp=drivesdk',
-                palette: {
-                  grad: 'from-emerald-500 via-teal-400 to-green-400',
-                  bar:  'from-emerald-500 to-teal-400',
-                  bg:   'from-emerald-50 to-teal-50',
-                  badge:'bg-emerald-100 text-emerald-700 border-emerald-300',
-                  btn:  'from-emerald-500 to-teal-400',
-                  ring: 'ring-emerald-300',
-                  frame:'border-emerald-400',
-                },
-              },
-              {
-                title: 'Providence Leap Ideathon - Qualified to Stage 2',
-                image: proImage,
-                desc: 'Qualified to Stage 2 of the Providence Leap Ideathon, presenting a tech-driven healthcare idea that advanced through competitive evaluation rounds.',
-                icon: '💡',
-                year: '2024',
-                tag: 'Ideathon',
-                link: 'https://drive.google.com/file/d/1vpqmX1F0kuvj6FKA1FV813tet2GZIuLn/view?usp=sharing',
-                palette: {
-                  grad: 'from-rose-500 via-pink-400 to-fuchsia-400',
-                  bar:  'from-rose-500 to-pink-400',
-                  bg:   'from-rose-50 to-pink-50',
-                  badge:'bg-rose-100 text-rose-700 border-rose-300',
-                  btn:  'from-rose-500 to-pink-400',
-                  ring: 'ring-rose-300',
-                  frame:'border-rose-400',
-                },
-              },
-              {
-                title: 'HackVega - National Coding Hackathon',
-                image: hackImage,
-                desc: 'Competed in the HackVega national coding hackathon, building a full-stack solution under time pressure and earning recognition among top participants across the country.',
-                icon: '🚀',
-                year: '2025',
-                tag: 'Hackathon',
-                link: 'https://drive.google.com/file/d/1FXMwpg3BxJ--kfkxFvz9D5xirxYnakOj/view?usp=sharing',
-                palette: {
-                  grad: 'from-sky-500 via-blue-400 to-indigo-400',
-                  bar:  'from-sky-500 to-indigo-400',
-                  bg:   'from-sky-50 to-indigo-50',
-                  badge:'bg-sky-100 text-sky-700 border-sky-300',
-                  btn:  'from-sky-500 to-indigo-400',
-                  ring: 'ring-sky-300',
-                  frame:'border-sky-400',
-                },
-              },
-              
-            ].map((ach, i) => (
-              <div
-                key={i}
-                className="cert-card-animate group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 border border-white/30"
-                style={{ animationDelay: `${i * 0.1}s` }}
-              >
-                {/* Gradient top bar */}
-                <div className={`h-2 w-full bg-gradient-to-r ${ach.palette.bar}`} />
-
-                {/* Card body */}
-                <div className={`bg-gradient-to-br ${ach.palette.bg} p-6 flex flex-col gap-5`}>
-
-                  {/* Photo frame */}
-                  <div className={`relative w-full h-44 rounded-2xl border-4 ${ach.palette.frame} bg-white/60 backdrop-blur-sm flex items-center justify-center overflow-hidden shadow-inner`}>
-                    <div className={`absolute inset-0 bg-gradient-to-br ${ach.palette.grad} opacity-10`} />
-                    {ach.image ? (
-                      <img
-                        src={ach.image}
-                        alt={ach.title}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                      />
-                    ) : (
-                      <div className="flex flex-col items-center gap-2 z-10">
-                        <span className="text-6xl drop-shadow-lg">{ach.icon}</span>
-                        <span className="text-xs font-medium text-gray-400 tracking-widest uppercase">Photo</span>
-                      </div>
-                    )}
-                    {/* Corner accents */}
-                    <span className={`absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 ${ach.palette.frame} rounded-tl-md`} />
-                    <span className={`absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 ${ach.palette.frame} rounded-tr-md`} />
-                    <span className={`absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 ${ach.palette.frame} rounded-bl-md`} />
-                    <span className={`absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 ${ach.palette.frame} rounded-br-md`} />
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex flex-col gap-3">
-                    <div className="flex items-start justify-between gap-2">
-                      <h3 className="font-bold text-base leading-snug text-gray-800 group-hover:text-gray-900 transition-colors">{ach.title}</h3>
-                      <Badge className={`${ach.palette.badge} border text-xs px-2 py-0.5 rounded-full flex-shrink-0`}>{ach.year}</Badge>
-                    </div>
-                    <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-full bg-gradient-to-r ${ach.palette.grad} text-white w-fit shadow-sm`}>{ach.tag}</span>
-                    <p className="text-sm text-gray-600 leading-relaxed">{ach.desc}</p>
-                  </div>
-
-                  {/* Button */}
-                  <Button
-                    onClick={() => window.open(ach.link, '_blank')}
-                    className={`w-full bg-gradient-to-r ${ach.palette.btn} text-white font-semibold rounded-xl py-2.5 hover:shadow-lg hover:scale-105 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2`}
-                  >
-                    View Certificate <span className="text-lg leading-none">↗</span>
-                  </Button>
-                </div>
-              </div>
             ))}
           </div>
         </div>
