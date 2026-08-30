@@ -389,12 +389,9 @@ const Index = () => {
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 animate-fade-in-up">
             <div className="space-y-4">
-              <h1 className="text-5xl lg:text-7xl font-bold font-poppins text-glow">
-                Hi, I'm{' '}
-                <span className="bg-gradient-to-r from-blue-700 via-blue-500 to-blue-400 bg-clip-text text-transparent">Mallarapu </span>{' '}
-                <span className="bg-gradient-to-r from-blue-700 via-blue-500 to-blue-400 bg-clip-text text-transparent">
-                  Arun Chand
-                </span>
+              <h1 className="text-5xl lg:text-7xl font-bold font-poppins text-glow leading-tight">
+                <span className="block">Hi, I'm <span className="bg-gradient-to-r from-blue-700 via-blue-500 to-blue-400 bg-clip-text text-transparent">Mallarapu</span></span>
+                <span className="block bg-gradient-to-r from-blue-700 via-blue-500 to-blue-400 bg-clip-text text-transparent">Arun Chand</span>
               </h1>
               <div className="h-16 flex items-center">
                 <span className="text-2xl lg:text-3xl font-medium">
