@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+﻿import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -335,7 +335,7 @@ const Index = () => {
               Arunchand Mallarapu
             </div>
             <div className="hidden md:flex items-center space-x-6">
-              {['About', 'Education', 'Skills', 'Achievements', 'Projects', 'Experience', 'Certifications', 'Contact'].map((item) => (
+              {['About', 'Education', 'Achievements', 'Skills', 'Projects', 'Experience'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
@@ -344,24 +344,41 @@ const Index = () => {
                   {item}
                 </button>
               ))}
-              <div className="flex items-center gap-5 ml-4 border-l border-white/20 pl-5">
-                <a href="https://leetcode.com/u/arunchandmallarapu_19/" target="_blank" rel="noopener noreferrer" title="LeetCode"
-                  className="hover:scale-125 transition-all duration-300 drop-shadow-lg">
-                  <SiLeetcode className="w-7 h-7 text-orange-400" />
-                </a>
-                <a href="https://github.com/Arunchand19" target="_blank" rel="noopener noreferrer" title="GitHub"
-                  className="hover:scale-125 transition-all duration-300 drop-shadow-lg">
-                  <FaGithub className="w-7 h-7 text-purple-400" />
-                </a>
-                <a href="https://www.codechef.com/users/cry_rained_38" target="_blank" rel="noopener noreferrer" title="CodeChef"
-                  className="hover:scale-125 transition-all duration-300 drop-shadow-lg">
-                  <SiCodechef className="w-7 h-7 text-amber-500" />
-                </a>
-                <a href="https://www.hackerrank.com/profile/arunchandmallar1" target="_blank" rel="noopener noreferrer" title="HackerRank"
-                  className="hover:scale-125 transition-all duration-300 drop-shadow-lg">
-                  <SiHackerrank className="w-7 h-7 text-green-400" />
-                </a>
+              {/* Coding Profiles Dropdown */}
+              <div className="relative group">
+                <button className="glass-button px-4 py-2 rounded-xl text-sm font-medium hover:bg-primary/20 hover:text-primary hover:shadow-lg transition-all duration-300 flex items-center gap-1">
+                  Coding Profiles <span className="text-xs">▾</span>
+                </button>
+                <div className="absolute top-full left-0 mt-1 bg-white/90 backdrop-blur-md border border-white/30 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50 min-w-[160px]">
+                  <a href="https://leetcode.com/u/arunchandmallarapu_19/" target="_blank" rel="noopener noreferrer"
+                    className="flex items-center gap-3 px-4 py-3 hover:bg-orange-50 rounded-t-xl transition-colors duration-200">
+                    <SiLeetcode className="w-5 h-5 text-orange-400" />
+                    <span className="text-sm font-medium text-gray-700">LeetCode</span>
+                  </a>
+                  <a href="https://www.codechef.com/users/cry_rained_38" target="_blank" rel="noopener noreferrer"
+                    className="flex items-center gap-3 px-4 py-3 hover:bg-amber-50 transition-colors duration-200">
+                    <SiCodechef className="w-5 h-5 text-amber-500" />
+                    <span className="text-sm font-medium text-gray-700">CodeChef</span>
+                  </a>
+                  <a href="https://www.hackerrank.com/profile/arunchandmallar1" target="_blank" rel="noopener noreferrer"
+                    className="flex items-center gap-3 px-4 py-3 hover:bg-green-50 rounded-b-xl transition-colors duration-200">
+                    <SiHackerrank className="w-5 h-5 text-green-400" />
+                    <span className="text-sm font-medium text-gray-700">HackerRank</span>
+                  </a>
+                </div>
               </div>
+              <button
+                onClick={() => scrollToSection('certifications')}
+                className="glass-button px-4 py-2 rounded-xl text-sm font-medium hover:bg-primary/20 hover:text-primary hover:shadow-lg transition-all duration-300"
+              >
+                Certifications
+              </button>
+              <button
+                onClick={() => scrollToSection('contact')}
+                className="glass-button px-4 py-2 rounded-xl text-sm font-medium hover:bg-primary/20 hover:text-primary hover:shadow-lg transition-all duration-300"
+              >
+                Contact
+              </button>
             </div>
           </div>
         </div>
@@ -413,6 +430,15 @@ const Index = () => {
 >
   <FaLinkedin className="text-xl" />
   LinkedIn
+</Button>
+
+<Button 
+  variant="outline" 
+  onClick={() => window.open("https://github.com/Arunchand19", "_blank")}
+  className="bg-gray-800 text-white flex items-center gap-2 px-8 py-3 text-lg font-medium rounded-2xl hover:bg-gray-700 transition-all duration-300"
+>
+  <FaGithub className="text-xl" />
+  GitHub
 </Button>
 
 
@@ -588,151 +614,6 @@ const Index = () => {
                     </ul>
                   </CardContent>
                 </Card>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section id="skills" className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-4 font-poppins text-glow">
-            Skills &amp; Expertise
-          </h2>
-          <p className="text-center text-muted-foreground mb-14 text-base">Technologies &amp; tools I work with</p>
-
-          {/* Technical & Soft Skills Cards */}
-          <div className="grid lg:grid-cols-2 gap-8 mb-12">
-
-            {/* Technical Skills */}
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-blue-300 hover:border-blue-500 hover:-translate-y-2 transition-all duration-300 group">
-              <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 to-blue-400" />
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-400 rounded-xl blur-md opacity-40 group-hover:opacity-70 transition-opacity duration-300" />
-                    <div className="relative bg-gradient-to-br from-blue-600 to-blue-400 p-3 rounded-xl shadow-lg">
-                      <Code className="w-6 h-6 text-white" />
-                    </div>
-                  </div>
-                  <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">Technical Skills</h3>
-                </div>
-                <div className="flex flex-wrap gap-3">
-                  {[
-                    'HTML', 'CSS', 'JavaScript', 'React.js', 'Node.js', 'Bootstrap',
-                    'Python', 'Java', 'C++', 'Flask',
-                    'MySQL', 'MongoDB', 'Database',
-                    'Machine Learning', 'Deep Learning', 'Artificial Intelligence', 'Neural Networks',
-                    'Git', 'Cloud Computing', 'System Design',
-                  ].map((skill, i) => (
-                    <span
-                      key={skill}
-                      className="skill-badge-animate cursor-pointer text-sm font-semibold px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-600 to-blue-400 shadow-md hover:from-blue-500 hover:to-blue-300 hover:scale-110 hover:shadow-blue-400/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-                      style={{ animationDelay: `${i * 0.05}s` }}
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Soft Skills */}
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-violet-200 hover:border-violet-500 hover:-translate-y-2 transition-all duration-300 group">
-              <div className="h-1.5 w-full bg-gradient-to-r from-violet-700 to-violet-500" />
-              <div className="bg-gradient-to-br from-violet-50 to-purple-50 p-8">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-violet-700 to-violet-500 rounded-xl blur-md opacity-40 group-hover:opacity-70 transition-opacity duration-300" />
-                    <div className="relative bg-gradient-to-br from-violet-700 to-violet-500 p-3 rounded-xl shadow-lg">
-                      <Users className="w-6 h-6 text-white" />
-                    </div>
-                  </div>
-                  <h3 className="text-2xl font-bold bg-gradient-to-r from-violet-700 to-violet-500 bg-clip-text text-transparent">Soft Skills</h3>
-                </div>
-                <div className="flex flex-wrap gap-3">
-                  {[
-                    'Leadership','Teamwork','Problem Solving','Communication','Project Management','Critical Thinking'
-                  ].map((skill, i) => (
-                    <span
-                      key={skill}
-                      className="skill-badge-animate cursor-pointer text-sm font-semibold px-5 py-2.5 rounded-full text-white bg-gradient-to-r from-violet-700 to-violet-500 shadow-md hover:from-violet-500 hover:to-purple-400 hover:scale-110 hover:shadow-violet-400/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-                      style={{ animationDelay: `${i * 0.08}s` }}
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Progress Bar Cards */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                category: 'Programming',
-                grad: 'from-orange-500 to-amber-400',
-                bar:  'from-orange-500 to-amber-400',
-                bg:   'from-orange-50 to-amber-50',
-                border: 'border-orange-300 hover:border-orange-500',
-                text:  'from-orange-600 to-amber-500',
-                shadow: 'hover:shadow-orange-200',
-              },
-              {
-                category: 'Tools',
-                grad: 'from-green-600 to-emerald-400',
-                bar:  'from-green-600 to-emerald-400',
-                bg:   'from-green-50 to-emerald-50',
-                border: 'border-green-300 hover:border-green-500',
-                text:  'from-green-600 to-emerald-500',
-                shadow: 'hover:shadow-green-200',
-              },
-              {
-                category: 'Soft Skills',
-                grad: 'from-red-600 to-rose-400',
-                bar:  'from-red-600 to-rose-400',
-                bg:   'from-red-50 to-rose-50',
-                border: 'border-red-300 hover:border-red-500',
-                text:  'from-red-600 to-rose-500',
-                shadow: 'hover:shadow-red-200',
-              },
-            ].map(({ category, grad, bar, bg, border, text, shadow }) => (
-              <div
-                key={category}
-                className={`relative rounded-3xl overflow-hidden shadow-xl ${shadow} hover:shadow-2xl border ${border} hover:-translate-y-3 transition-all duration-300 group`}
-              >
-                <div className={`h-2 w-full bg-gradient-to-r ${grad}`} />
-                <div className={`bg-gradient-to-br ${bg} p-7`}>
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="relative">
-                      <div className={`absolute inset-0 bg-gradient-to-br ${grad} rounded-xl blur-md opacity-40 group-hover:opacity-80 transition-opacity duration-300`} />
-                      <div className={`relative bg-gradient-to-br ${grad} p-3 rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                        <Code className="w-5 h-5 text-white" />
-                      </div>
-                    </div>
-                    <h3 className={`text-xl font-bold bg-gradient-to-r ${text} bg-clip-text text-transparent`}>{category}</h3>
-                  </div>
-                  <div className="space-y-5">
-                    {skills.filter(s => s.category === category).map((skill, idx) => (
-                      <div key={skill.name} className="skill-badge-animate" style={{ animationDelay: `${idx * 0.1}s` }}>
-                        <div className="flex justify-between mb-2">
-                          <span className="text-sm font-semibold text-gray-700">{skill.name}</span>
-                          <span className={`text-xs font-bold bg-gradient-to-r ${text} bg-clip-text text-transparent`}>{skill.level}%</span>
-                        </div>
-                        <div className="h-3 rounded-full bg-white/80 shadow-inner overflow-hidden">
-                          <div
-                            className={`h-full rounded-full bg-gradient-to-r ${bar} shadow-md skill-bar-animated relative overflow-hidden`}
-                            style={{ '--skill-level': `${skill.level}%` } as React.CSSProperties}
-                          >
-                            <div className="absolute inset-0 bg-white/20 animate-pulse rounded-full" />
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
               </div>
             ))}
           </div>
@@ -965,6 +846,151 @@ const Index = () => {
                       View Certificate <span className="text-lg leading-none">↗</span>
                     </Button>
                   )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-4 font-poppins text-glow">
+            Skills &amp; Expertise
+          </h2>
+          <p className="text-center text-muted-foreground mb-14 text-base">Technologies &amp; tools I work with</p>
+
+          {/* Technical & Soft Skills Cards */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-12">
+
+            {/* Technical Skills */}
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-blue-300 hover:border-blue-500 hover:-translate-y-2 transition-all duration-300 group">
+              <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 to-blue-400" />
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-400 rounded-xl blur-md opacity-40 group-hover:opacity-70 transition-opacity duration-300" />
+                    <div className="relative bg-gradient-to-br from-blue-600 to-blue-400 p-3 rounded-xl shadow-lg">
+                      <Code className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">Technical Skills</h3>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    'HTML', 'CSS', 'JavaScript', 'React.js', 'Node.js', 'Bootstrap',
+                    'Python', 'Java', 'C++', 'Flask',
+                    'MySQL', 'MongoDB', 'Database',
+                    'Machine Learning', 'Deep Learning', 'Artificial Intelligence', 'Neural Networks',
+                    'Git', 'Cloud Computing', 'System Design',
+                  ].map((skill, i) => (
+                    <span
+                      key={skill}
+                      className="skill-badge-animate cursor-pointer text-sm font-semibold px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-600 to-blue-400 shadow-md hover:from-blue-500 hover:to-blue-300 hover:scale-110 hover:shadow-blue-400/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                      style={{ animationDelay: `${i * 0.05}s` }}
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Soft Skills */}
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-violet-200 hover:border-violet-500 hover:-translate-y-2 transition-all duration-300 group">
+              <div className="h-1.5 w-full bg-gradient-to-r from-violet-700 to-violet-500" />
+              <div className="bg-gradient-to-br from-violet-50 to-purple-50 p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-violet-700 to-violet-500 rounded-xl blur-md opacity-40 group-hover:opacity-70 transition-opacity duration-300" />
+                    <div className="relative bg-gradient-to-br from-violet-700 to-violet-500 p-3 rounded-xl shadow-lg">
+                      <Users className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-bold bg-gradient-to-r from-violet-700 to-violet-500 bg-clip-text text-transparent">Soft Skills</h3>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    'Leadership','Teamwork','Problem Solving','Communication','Project Management','Critical Thinking'
+                  ].map((skill, i) => (
+                    <span
+                      key={skill}
+                      className="skill-badge-animate cursor-pointer text-sm font-semibold px-5 py-2.5 rounded-full text-white bg-gradient-to-r from-violet-700 to-violet-500 shadow-md hover:from-violet-500 hover:to-purple-400 hover:scale-110 hover:shadow-violet-400/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                      style={{ animationDelay: `${i * 0.08}s` }}
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Progress Bar Cards */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                category: 'Programming',
+                grad: 'from-orange-500 to-amber-400',
+                bar:  'from-orange-500 to-amber-400',
+                bg:   'from-orange-50 to-amber-50',
+                border: 'border-orange-300 hover:border-orange-500',
+                text:  'from-orange-600 to-amber-500',
+                shadow: 'hover:shadow-orange-200',
+              },
+              {
+                category: 'Tools',
+                grad: 'from-green-600 to-emerald-400',
+                bar:  'from-green-600 to-emerald-400',
+                bg:   'from-green-50 to-emerald-50',
+                border: 'border-green-300 hover:border-green-500',
+                text:  'from-green-600 to-emerald-500',
+                shadow: 'hover:shadow-green-200',
+              },
+              {
+                category: 'Soft Skills',
+                grad: 'from-red-600 to-rose-400',
+                bar:  'from-red-600 to-rose-400',
+                bg:   'from-red-50 to-rose-50',
+                border: 'border-red-300 hover:border-red-500',
+                text:  'from-red-600 to-rose-500',
+                shadow: 'hover:shadow-red-200',
+              },
+            ].map(({ category, grad, bar, bg, border, text, shadow }) => (
+              <div
+                key={category}
+                className={`relative rounded-3xl overflow-hidden shadow-xl ${shadow} hover:shadow-2xl border ${border} hover:-translate-y-3 transition-all duration-300 group`}
+              >
+                <div className={`h-2 w-full bg-gradient-to-r ${grad}`} />
+                <div className={`bg-gradient-to-br ${bg} p-7`}>
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="relative">
+                      <div className={`absolute inset-0 bg-gradient-to-br ${grad} rounded-xl blur-md opacity-40 group-hover:opacity-80 transition-opacity duration-300`} />
+                      <div className={`relative bg-gradient-to-br ${grad} p-3 rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                        <Code className="w-5 h-5 text-white" />
+                      </div>
+                    </div>
+                    <h3 className={`text-xl font-bold bg-gradient-to-r ${text} bg-clip-text text-transparent`}>{category}</h3>
+                  </div>
+                  <div className="space-y-5">
+                    {skills.filter(s => s.category === category).map((skill, idx) => (
+                      <div key={skill.name} className="skill-badge-animate" style={{ animationDelay: `${idx * 0.1}s` }}>
+                        <div className="flex justify-between mb-2">
+                          <span className="text-sm font-semibold text-gray-700">{skill.name}</span>
+                          <span className={`text-xs font-bold bg-gradient-to-r ${text} bg-clip-text text-transparent`}>{skill.level}%</span>
+                        </div>
+                        <div className="h-3 rounded-full bg-white/80 shadow-inner overflow-hidden">
+                          <div
+                            className={`h-full rounded-full bg-gradient-to-r ${bar} shadow-md skill-bar-animated relative overflow-hidden`}
+                            style={{ '--skill-level': `${skill.level}%` } as React.CSSProperties}
+                          >
+                            <div className="absolute inset-0 bg-white/20 animate-pulse rounded-full" />
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
